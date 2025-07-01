@@ -1,0 +1,33 @@
+.contentWrapper {
+  flex: 1 0 auto;
+}
+
+.movieCard {
+  display: flex;
+  gap: 25px;
+}
+.moviePicture {
+  object-fit: contain;
+}
+
+.movieDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+h2,
+h3 {
+  font-weight: bold;
+}
+h2 {
+  font-size: 1.7rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+.DescriptionItem::before {
+  content: "- ";
+}

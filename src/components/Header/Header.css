@@ -1,0 +1,23 @@
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: var(--paddingVertical) 0;
+}
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.movieList {
+  display: flex;
+  justify-content: space-around;
+
+  background-color: #303030;
+  color: #a6a6a6;
+}
+
+.movieListItem {
+  cursor: pointer;
+}
