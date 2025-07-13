@@ -1,15 +1,15 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import "./Footer.css";
 
-export class Footer extends Component {
+class Footer extends Component {
+  footerInfo = this.props.footerInfo;
   render() {
-    const footerInfo = this.props.footerInfo;
     return (
       <>
         <footer>
-          <p>{footerInfo.studioAddress}</p>
-          <p>{footerInfo.email}</p>
-          <p>{footerInfo.tel}</p>
+          <p>{this.footerInfo.studioAddress}</p>
+          <p>{this.footerInfo.email}</p>
+          <p>{this.footerInfo.tel}</p>
         </footer>
       </>
     );

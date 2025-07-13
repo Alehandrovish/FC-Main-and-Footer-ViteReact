@@ -1,42 +1,38 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import "./Main.css";
 
-export class Main extends Component {
-  getlist(object, field = "name") {
-    if (!object || object.length === 0) return "немає даних.";
-    return object.map((obj) => obj[field]).join(", ") + ".";
-  }
+class Main extends Component {
+  movieinfo = this.props.movieInfo;
   render() {
-    const movieinfo = this.props.movieInfo;
-
     return (
       <>
         <main className="contentWrapper">
           <section className="movieCard">
             <img
               className="moviePicture"
-              src={movieinfo.url}
-              alt={"Picture of " + movieinfo.title}
+              src={this.movieinfo.url}
+              alt={"Picture of " + this.movieinfo.title}
             />
             <section className="movieDescription">
-              <h2>{movieinfo.title}</h2>
-              <p>{movieinfo.script}</p>
+              <h2>{this.movieinfo.title}</h2>
+              <p>{this.movieinfo.script}</p>
               <h3>Загальні характеристики:</h3>
               <ul>
                 <li className="DescriptionItem">
-                  Актори: {this.getlist(movieinfo.actors)}
+                  Актори: {this.movieinfo.actors.join(", ")}
                 </li>
                 <li className="DescriptionItem">
-                  Країна: {this.getlist(movieinfo.countries)}
+                  Країна: {this.movieinfo.countries.join(", ")}
                 </li>
                 <li className="DescriptionItem">
-                  Студія: {this.getlist(movieinfo.studios)}
+                  Студія: {this.movieinfo.studios}
                 </li>
                 <li className="DescriptionItem">
-                  {" "}
-                  Жанр: {this.getlist(movieinfo.genres)}
+                  Жанр: {this.movieinfo.genres}
                 </li>
-                <li className="DescriptionItem">Рік: {movieinfo.year} p.</li>
+                <li className="DescriptionItem">
+                  Рік: {this.movieinfo.year} p.
+                </li>
               </ul>
             </section>
           </section>

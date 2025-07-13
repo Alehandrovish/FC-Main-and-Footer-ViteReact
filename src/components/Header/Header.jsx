@@ -1,19 +1,19 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import "./Header.css";
 
-export class Header extends Component {
+class Header extends Component {
+  movies = this.props.movies;
   render() {
-    const movies = this.props.movies;
     return (
       <>
         <header>
           <h1>Movie Info</h1>
           <nav>
             <ul className="movieList">
-              {movies.map((movie) => {
+              {this.movies.map((movie) => {
                 return (
-                  <li className="movieListItem" key={movie.id}>
-                    {movie.title}
+                  <li className="movieListItem" key={movie}>
+                    {movie}
                   </li>
                 );
               })}
